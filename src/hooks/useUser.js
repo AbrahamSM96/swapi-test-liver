@@ -11,7 +11,7 @@ export default function useUser() {
 
   useEffect(() => {
     user === null && history.push('/')
-  }, [user])
+  }, [user, history])
 
   return user
 }

@@ -20,7 +20,7 @@ export default function ParallaxStars() {
 
   useEffect(() => {
     user && history.replace('/cards')
-  }, [user])
+  }, [user, history])
 
   const handleClick = () => {
     loginWithGmail().catch((err) => {

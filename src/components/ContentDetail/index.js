@@ -30,8 +30,6 @@ function ContentDetail(props) {
     return url.split('/')[url.split('/').length - 2]
   }
 
-  console.log(name, 'NAMEEE')
-
   return (
     <>
       <ButtonContent>

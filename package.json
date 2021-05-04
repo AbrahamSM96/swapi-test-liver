@@ -17,6 +17,7 @@
     "react-scripts": "4.0.3",
     "redux": "^4.1.0",
     "styled-components": "^5.2.3",
+    "vercel": "^22.0.1",
     "web-vitals": "^1.1.1"
   },
   "scripts": {

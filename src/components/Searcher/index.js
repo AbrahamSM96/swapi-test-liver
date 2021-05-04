@@ -1,6 +1,5 @@
 import React from 'react'
 import useFetchApi from '../../hooks/useFetchApi'
-import { connect } from 'react-redux'
 import { InputContent } from './styles'
 export default function Searcher() {
   const fetchApi = useFetchApi()
@@ -9,9 +8,7 @@ export default function Searcher() {
   const handleSubmit = (event) => {
     event.preventDefault()
     fetchApiData()
-    console.log(fetchApiData(), 'fetchApiData()')
   }
-  console.log(search, 'searrrr')
   return (
     <>
       <InputContent>

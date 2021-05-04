@@ -12,7 +12,6 @@ export function useSingleCharacter(id) {
       const response = await fetch(API)
       const data = await response.json()
       setSingleCharacter(data)
-      console.log(singleCharacter, 'singleCharactersingleCharacter')
       setLoading(false)
     } catch (error) {
       setLoading(false)

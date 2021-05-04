@@ -9,7 +9,6 @@ export default function useFetchApi() {
   const fetchApi = async () => {
     setLoad(true)
     setError(null)
-    console.log(search, 'searchhhhh')
     try {
       const response = await fetch(API, {
         params: { search: search }

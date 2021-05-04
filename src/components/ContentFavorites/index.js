@@ -9,7 +9,6 @@ import { WrapperCard, ContainerCard } from '../ContentCard/styles'
 function ContentFavorites(props) {
   const history = useHistory()
   const { favoriteCharacters } = props
-  console.log(props, 'favporo')
   const handleClickReturn = () => {
     history.replace('/cards')
   }
