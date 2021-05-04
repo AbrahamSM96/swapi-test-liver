@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { Link } from 'react-router-dom'
 export const ContainerCard = styled.div`
   height: 15rem;
   background-color: #fff;
@@ -7,22 +7,16 @@ export const ContainerCard = styled.div`
   border-radius: 30px;
   padding: 20px 20px;
   width: 33rem;
+  display: flex;
+  justify-content: space-around;
   position: relative;
-
   box-shadow: inset 0 0 50px #000, inset 20px 0 80px #fcdf2c,
-    inset -20px 0 80px #fcdf2c, inset 20px 0 300px #fcdf2c,
-    inset -20px 0 300px #fcdf2c, 0 0 20px #000, -10px 0 30px #fcdf2c,
+    inset -20px 0 80px #fcdf2c, inset 20px 0 200px #fcdf2c,
+    inset -20px 0 80px #fcdf2c, 0 0 20px #fcdf2c, -10px 0 30px #fcdf2c,
     10px 0 15px #fcdf2c;
 `
 export const ContentLeft = styled.div`
-  border: 1px solid #8f3f;
-  border-radius: 0.5em;
-  position: absolute;
-  width: 300px;
-  max-height: 500px;
-  height: 240px;
-  pointer-events: none;
-  background-color: rgba(15, 33, 48, 0.3);
+  position: relative;
 `
 export const ContentRight = styled.div`
   background-color: rgba(203, 43, 64, 0.8);
@@ -30,8 +24,8 @@ export const ContentRight = styled.div`
   position: absolute;
   padding: 10px;
   transform: translateY(-50%);
-  width: 75%;
-  height: 65%;
+  width: 45%;
+  height: 35%;
   border-radius: 30px;
   box-shadow: 0 28px 79px 0 rgb(10 22 31 / 35%);
   top: 50%;
@@ -42,13 +36,11 @@ export const ContentText = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
-    0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
 `
 
 export const Figure = styled.figure`
   display: flex;
+  width: 150px;
   align-items: center;
   position: absolute;
   pointer-events: none;
@@ -58,11 +50,30 @@ export const Figure = styled.figure`
   transform: translateY(-50%) translateX(-40px);
   transition: all 0.3s;
   z-index: 2;
+  border-radius: 999px;
 `
 
 export const Img = styled.img`
   object-fit: contain;
   object-position: center right;
   max-width: 100%;
-  border: 1px solid blue;
+  border-radius: 999px;
+`
+
+export const LinkText = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
+    0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+  & h1 {
+    font-size: 1.5em;
+  }
+  & h1:hover {
+    text-shadow: 0 0 5px #fcdf2c, 0 0 10px #fcdf2c, 0 0 20px #fcdf2c,
+      0 0 40px #0ff, 0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff,
+      0 0 150px #0ff;
+  }
 `

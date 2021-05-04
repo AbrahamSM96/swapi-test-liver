@@ -16,3 +16,10 @@ export const WrapperCard = styled.div`
   grid-gap: 40px 40px;
   height: 100%;
 `
+
+export const LoaderContent = styled.div`
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+`

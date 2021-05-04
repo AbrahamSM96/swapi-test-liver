@@ -24,7 +24,9 @@ export const Img = styled.img`
 `
 
 export const LinkButton = styled(Link)`
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   padding: 0.35em 1.2em;
   border: 0.1em solid #fcdf2c;
@@ -58,6 +60,9 @@ export const LinkButton = styled(Link)`
   &:active:after {
     width: 100%;
     border-radius: 0.7em;
+  }
+  svg {
+    margin-right: 8px;
   }
   @media (max-width: 30em) {
     display: block;

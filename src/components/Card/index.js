@@ -1,34 +1,79 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   ContainerCard,
   ContentLeft,
   ContentRight,
   ContentText,
   Figure,
-  Img
+  Img,
+  LinkText
 } from './styles'
-export default function Card(props, { id }) {
-  console.log(id)
-  console.log(props, 'proooos')
+import { setFavorite, deleteFavorite, setData } from '../../actions'
+import { connect } from 'react-redux'
+
+import FavButton from '../FavButton'
+function Card(props) {
+  const { name, urlImg, favoriteCharacters, id } = props
+  const [favorite, setFavorite] = useState(false)
+
+  const handleSetFavorite = () => {
+    props.setFavorite({ name, urlImg })
+    setFavorite(true)
+  }
+
+  const handleDeleteFavorite = (itemId) => {
+    props.deleteFavorite(itemId)
+    setFavorite(false)
+  }
+  const isFavorite = () => {
+    const result = favoriteCharacters.filter(
+      (favoriteCharacter) => favoriteCharacter.name === name
+    )
+    if (result.length) {
+      setFavorite(true)
+    }
+  }
+
+  useEffect(() => {
+    isFavorite()
+  }, [])
   return (
     <>
       <ContainerCard>
         <ContentLeft>
           <Figure>
-            <Img
-              src="https://res.cloudinary.com/muhammederdem/image/upload/v1536405215/starwars/item-4.png"
-              alt="name"
-            />
+            <Img src={urlImg} alt="name" />
           </Figure>
         </ContentLeft>
         <ContentRight>
           <ContentText>
-            <h1>Title</h1>
-            <p>name</p>
-            <p>homeworld</p>
+            <FavButton
+              handleDeleteFavorite={handleDeleteFavorite}
+              handleSetFavorite={handleSetFavorite}
+              favorite={favorite}
+              name={name}
+            />
+            <LinkText to={`/detail/${id}`}>
+              <h1>{name}</h1>
+            </LinkText>
           </ContentText>
         </ContentRight>
       </ContainerCard>
     </>
   )
 }
+
+const mapStateToProps = (state) => {
+  return {
+    favoriteCharacters: state.favoriteCharacters,
+    data: state.setData
+  }
+}
+
+const mapDispatchToProps = {
+  setFavorite,
+  deleteFavorite,
+  setData
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card)
