@@ -7,7 +7,7 @@ import { ContainerCard, WrapperCard, LoaderContent } from './styles'
 import Loader from '../Loader'
 function ContentCard(props) {
   const fetchApi = useFetchApi()
-  const { data, load, error } = fetchApi
+  const { data, load } = fetchApi
   const { results = [] } = data
   const imgURL = 'https://starwars-visualguide.com/assets/img/characters/'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+// import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import { connect } from 'react-redux'
 import { setData } from 'src/actions'
 import { MdChevronLeft } from 'react-icons/md'
@@ -22,7 +22,7 @@ function ContentDetail(props) {
     history.replace('/cards')
   }
 
-  const { singleCharacter, loading, error } = useSingleCharacter(parseParams)
+  const { singleCharacter, loading } = useSingleCharacter(parseParams)
 
   const imgURL = 'https://starwars-visualguide.com/assets/img/characters/'
   const { url = '', name = '' } = singleCharacter

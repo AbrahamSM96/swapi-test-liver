@@ -21,3 +21,9 @@ export const AvatarContent = styled.div`
   display: flex;
   align-items: center;
 `
+export const ContainerSkeleton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`

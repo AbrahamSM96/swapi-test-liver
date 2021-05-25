@@ -17,11 +17,12 @@ function Card(props) {
   const [favorite, setFavorite] = useState(false)
 
   const handleSetFavorite = () => {
-    props.setFavorite({ name, urlImg })
+    props.setFavorite({ name, urlImg, id })
     setFavorite(true)
   }
 
   const handleDeleteFavorite = (itemId) => {
+    console.log(itemId, 'item')
     props.deleteFavorite(itemId)
     setFavorite(false)
   }
@@ -48,7 +49,7 @@ function Card(props) {
         <ContentRight>
           <ContentText>
             <FavButton
-              handleDeleteFavorite={handleDeleteFavorite}
+              handleDeleteFavorite={() => handleDeleteFavorite(id)}
               handleSetFavorite={handleSetFavorite}
               favorite={favorite}
               name={name}

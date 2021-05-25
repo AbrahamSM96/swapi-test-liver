@@ -14,7 +14,7 @@ function ContentFavorites(props) {
   }
   return (
     <>
-      <ContainerCard>
+      <ContainerCard style={{ height: '100vh' }}>
         <ButtonContent>
           <Button onClick={handleClickReturn}>
             <MdChevronLeft size={32} />

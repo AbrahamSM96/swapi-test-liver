@@ -4,6 +4,7 @@ export const Button = styled.button`
   background-color: transparent;
   border: transparent;
   cursor: pointer;
+
   & svg {
     margin-right: 4px;
     color: #d1d1d1;

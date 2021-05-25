@@ -50,14 +50,13 @@ export const Figure = styled.figure`
   transform: translateY(-50%) translateX(-40px);
   transition: all 0.3s;
   z-index: 2;
-  border-radius: 999px;
 `
 
 export const Img = styled.img`
   object-fit: contain;
   object-position: center right;
   max-width: 100%;
-  border-radius: 999px;
+  border-radius: 1rem;
 `
 
 export const LinkText = styled(Link)`

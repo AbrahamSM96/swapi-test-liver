@@ -14,7 +14,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         favoriteCharacters: state.favoriteCharacters.filter(
-          (items) => items.data.id !== action.payload
+          (items) => items.id !== action.payload
         )
       }
     case 'SET_SEARCH':
