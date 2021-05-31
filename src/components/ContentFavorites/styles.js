@@ -8,4 +8,7 @@ export const ContentEmpty = styled.div`
 export const EmptyText = styled.p`
   color: papayawhip;
   font-size: 4em;
+  @media (max-width: 720px) {
+    font-size: 2.5em;
+  }
 `

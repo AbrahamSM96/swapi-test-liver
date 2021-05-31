@@ -10,7 +10,7 @@ export const NavBarContent = styled.div`
   width: 100%;
   @media (max-width: 720px) {
     justify-content: flex-start;
-    padding-left: 50px;
+    margin-left: 50px;
     z-index: 2;
   }
 `

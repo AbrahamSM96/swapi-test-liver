@@ -34,6 +34,7 @@ export const Button = styled.button`
   color: #fff;
   border: none;
   cursor: pointer;
+  font-size: 1em;
 `
 
 export const LoaderContent = styled.div`
