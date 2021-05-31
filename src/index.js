@@ -7,12 +7,16 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers'
 
+const localStorageList = localStorage.getItem('favoritesStorage')
+
 const initialState = {
   favoriteCharacters: [],
   data: [],
   search: ''
 }
-
+if (localStorageList) {
+  initialState.favoriteCharacters = JSON.parse(localStorageList)
+}
 const store = createStore(reducer, initialState)
 
 ReactDOM.render(

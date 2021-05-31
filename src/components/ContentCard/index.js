@@ -3,7 +3,7 @@ import Card from '../Card'
 import useFetchApi from '../../hooks/useFetchApi'
 import { setData } from '../../actions'
 import { connect } from 'react-redux'
-import { ContainerCard, WrapperCard, LoaderContent } from './styles'
+import { WrapperCard, LoaderContent } from './styles'
 import Loader from '../Loader'
 function ContentCard(props) {
   const fetchApi = useFetchApi()
@@ -17,26 +17,24 @@ function ContentCard(props) {
 
   return (
     <>
-      <ContainerCard>
-        <WrapperCard>
-          {results &&
-            results.map(({ name, films, url }, index) => (
-              <Card
-                key={index}
-                name={name}
-                films={films}
-                urlImg={`${imgURL + getId(url)}.jpg`}
-                index={index}
-                id={getId(url)}
-              />
-            ))}
-          {load && (
-            <LoaderContent>
-              <Loader />
-            </LoaderContent>
-          )}
-        </WrapperCard>
-      </ContainerCard>
+      <WrapperCard>
+        {results &&
+          results.map(({ name, films, url }, index) => (
+            <Card
+              key={index}
+              name={name}
+              films={films}
+              urlImg={`${imgURL + getId(url)}.jpg`}
+              index={index}
+              id={getId(url)}
+            />
+          ))}
+        {load && (
+          <LoaderContent>
+            <Loader />
+          </LoaderContent>
+        )}
+      </WrapperCard>
     </>
   )
 }

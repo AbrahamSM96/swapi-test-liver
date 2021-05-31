@@ -10,7 +10,7 @@ export default function useUser() {
   }, [])
 
   useEffect(() => {
-    user === null && history.push('/')
+    user === null && history.push('/login')
   }, [user, history])
 
   return user

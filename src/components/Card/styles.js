@@ -1,39 +1,42 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 export const ContainerCard = styled.div`
-  height: 15rem;
+  display: flex;
+  align-items: center;
+  height: auto;
   background-color: #fff;
   box-shadow: 0px 30px 139px 0px rgb(10 22 31 / 26%);
   border-radius: 30px;
-  padding: 20px 20px;
-  width: 33rem;
-  display: flex;
+  width: auto;
   justify-content: space-around;
   position: relative;
   box-shadow: inset 0 0 50px #000, inset 20px 0 80px #fcdf2c,
     inset -20px 0 80px #fcdf2c, inset 20px 0 200px #fcdf2c,
     inset -20px 0 80px #fcdf2c, 0 0 20px #fcdf2c, -10px 0 30px #fcdf2c,
     10px 0 15px #fcdf2c;
+  @media (max-width: 720px) {
+    flex-direction: column;
+    padding: 1.3rem 1rem;
+  }
 `
 export const ContentLeft = styled.div`
-  position: relative;
+  /* position: relative; */
 `
 export const ContentRight = styled.div`
-  background-color: rgba(203, 43, 64, 0.8);
+  background-color: #0a0a0a;
   border: 1px solid #fff;
-  position: absolute;
   padding: 10px;
-  transform: translateY(-50%);
-  width: 45%;
-  height: 35%;
+  width: 230px;
+  height: auto;
   border-radius: 30px;
   box-shadow: 0 28px 79px 0 rgb(10 22 31 / 35%);
-  top: 50%;
-  right: 4%;
+  margin: 0 1rem;
+  @media (max-width: 720px) {
+    margin: 0;
+  }
 `
 export const ContentText = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 `
@@ -42,14 +45,14 @@ export const Figure = styled.figure`
   display: flex;
   width: 150px;
   align-items: center;
-  position: absolute;
   pointer-events: none;
   user-select: none;
-  top: 43%;
-  right: 0;
-  transform: translateY(-50%) translateX(-40px);
   transition: all 0.3s;
   z-index: 2;
+`
+
+export const Name = styled.div`
+  width: 150px;
 `
 
 export const Img = styled.img`
@@ -61,6 +64,7 @@ export const Img = styled.img`
 
 export const LinkText = styled(Link)`
   display: flex;
+  text-align: center;
   flex-direction: column;
   align-items: center;
   justify-content: center;

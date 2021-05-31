@@ -18,7 +18,7 @@ export function useSingleCharacter(id) {
       setError(error)
     }
   }
-
+  /* eslint-disable */
   useEffect(() => {
     fetchCharacter()
   }, [])

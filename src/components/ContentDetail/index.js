@@ -19,7 +19,7 @@ function ContentDetail(props) {
   const history = useHistory()
   const { parseParams } = props
   const handleClickReturn = () => {
-    history.replace('/cards')
+    history.replace('/')
   }
 
   const { singleCharacter, loading } = useSingleCharacter(parseParams)

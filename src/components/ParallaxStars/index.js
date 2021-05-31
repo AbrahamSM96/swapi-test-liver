@@ -19,7 +19,7 @@ export default function ParallaxStars() {
   const user = useUser()
 
   useEffect(() => {
-    user && history.replace('/cards')
+    user && history.replace('/')
   }, [user, history])
 
   const handleClick = () => {
@@ -37,7 +37,7 @@ export default function ParallaxStars() {
           </Figure>
           <div>
             {user === null && (
-              <LinkButton to="/cards" onClick={handleClick}>
+              <LinkButton to="/" onClick={handleClick}>
                 <Gmail width={32} height={32} /> Login with Gmail
               </LinkButton>
             )}

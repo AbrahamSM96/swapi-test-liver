@@ -5,28 +5,35 @@ import Card from '../Card'
 import { useHistory } from 'react-router-dom'
 import { MdChevronLeft } from 'react-icons/md'
 import { ButtonContent, Button } from '../ContentDetail/styles'
-import { WrapperCard, ContainerCard } from '../ContentCard/styles'
+import { WrapperCard } from '../ContentCard/styles'
+import { ContentEmpty, EmptyText } from './styles.js'
 function ContentFavorites(props) {
   const history = useHistory()
   const { favoriteCharacters } = props
   const handleClickReturn = () => {
-    history.replace('/cards')
+    history.replace('/')
   }
+  const manyFavorites = favoriteCharacters.length
+  console.log(manyFavorites, 'many')
   return (
     <>
-      <ContainerCard style={{ height: '100vh' }}>
-        <ButtonContent>
-          <Button onClick={handleClickReturn}>
-            <MdChevronLeft size={32} />
-            Return
-          </Button>
-        </ButtonContent>
-        <WrapperCard>
-          {favoriteCharacters.map(({ name, urlImg }) => (
+      <ButtonContent>
+        <Button onClick={handleClickReturn}>
+          <MdChevronLeft size={32} />
+          Return
+        </Button>
+      </ButtonContent>
+      <WrapperCard>
+        {manyFavorites === 0 ? (
+          <ContentEmpty>
+            <EmptyText>No Favorites 🤪</EmptyText>
+          </ContentEmpty>
+        ) : (
+          favoriteCharacters.map(({ name, urlImg }) => (
             <Card key={name} name={name} urlImg={urlImg} />
-          ))}
-        </WrapperCard>
-      </ContainerCard>
+          ))
+        )}
+      </WrapperCard>
     </>
   )
 }

@@ -65,7 +65,6 @@ export const LinkButton = styled(Link)`
     margin-right: 8px;
   }
   @media (max-width: 30em) {
-    display: block;
     margin: 0.4em auto;
   }
 `

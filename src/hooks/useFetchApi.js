@@ -27,7 +27,7 @@ export default function useFetchApi() {
       setError(error)
     }
   }
-
+  /* eslint-disable */
   useEffect(() => {
     fetchApi()
   }, [])
